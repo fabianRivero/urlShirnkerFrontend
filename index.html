@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link shrinker</title>
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <body>
+    <header id="header">
+      <h1>Link shrinker</h1>
+        <nav id="navbar">
+          <div id="first-links" class="">
+            <a href="./login.html">Log In</a>
+            <a href="./signup.html">Sign Up</a>
+          </div>
+          <div id="logout" class="">Log Out</div>
+        </nav>
+    </header>
+    <main id="main">
+      <h2>Enter the URL you want to shrink!</h2>
+      <form action="" id="form">
+        <label for="originalUrl" id="url"></label>
+        <input required placeholder="Url" name="originalUrl" id="originalUrl" type="url">
+        <button type="submit" id="shrink-button">Shrink</button>
+      </form>
+
+      <table id="table" class="">
+        <thead id="thead">
+          <th>Original URL</th>
+          <th>Short URL</th>
+          <th>Clikcs</th>
+          <th>QR</th>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+      </table>
+  </body>
+  <script type="module">
+    import "./src/shrinkButton.js";
+    import "./src/navbarStyle.js";
+    import "./src/logout.js";
+    import './src/tableInfo.js';
+  </script>
+</html>
