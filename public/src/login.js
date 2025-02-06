@@ -1,5 +1,7 @@
-const loginForm = document.querySelector("#form");
+import dotenv from 'dotenv';
+dotenv.config();  
 
+const loginForm = document.querySelector("#form");
 const backendDomain = process.env.VITE_BACKEND_URL;
 const currentDomain = process.env.VITE_FRONTEND_URL;
 
