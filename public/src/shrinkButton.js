@@ -1,7 +1,7 @@
 import { item } from "./getToken";
 import { tableInfo } from "./tableInfo";
 import { jwtDecode } from 'jwt-decode';
-const backendDomain = import.meta.env.VITE_BACKEND_URL;
+const backendDomain = process.env.VITE_BACKEND_URL;
 
 document.addEventListener("DOMContentLoaded", () => {
     const shrinkButton = document.querySelector("#shrink-button");

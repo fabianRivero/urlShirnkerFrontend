@@ -1,7 +1,7 @@
 const logout = document.querySelector("#logout");
 import { item } from "./getToken";
 
-const currentDomain = import.meta.env.VITE_FRONTEND_URL;
+const currentDomain = process.env.VITE_FRONTEND_URL;
 
 logout.addEventListener("click", () => {
     if (!item){

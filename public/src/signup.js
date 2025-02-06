@@ -1,6 +1,6 @@
 const signupForm = document.querySelector("#form");
-const backendDomain = import.meta.env.VITE_BACKEND_URL;
-const currentDomain = import.meta.env.VITE_FRONTEND_URL;
+const backendDomain = process.env.VITE_BACKEND_URL;
+const currentDomain = process.env.VITE_FRONTEND_URL;
 
 console.log(backendDomain, currentDomain);
 
