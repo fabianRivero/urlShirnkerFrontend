@@ -1,9 +1,7 @@
 import { item } from "./getToken";
 import { jwtDecode } from "jwt-decode";
-import dotenv from 'dotenv';
-dotenv.config();
 
-const backendDomain = process.env.VITE_BACKEND_URL;
+const backendDomain = import.meta.env.VITE_BACKEND_URL;
 
 const table = document.querySelector("#table");
 const tbody = document.querySelector("#tbody");

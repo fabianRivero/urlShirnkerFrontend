@@ -1,10 +1,8 @@
 import { item } from "./getToken";
-import dotenv from 'dotenv';
-dotenv.config();
 
 const logout = document.querySelector("#logout");
 
-const currentDomain = process.env.VITE_FRONTEND_URL;
+const currentDomain = import.meta.env.VITE_FRONTEND_URL;
 
 logout.addEventListener("click", () => {
     if (!item){
