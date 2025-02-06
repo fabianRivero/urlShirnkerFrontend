@@ -2,6 +2,8 @@ const signupForm = document.querySelector("#form");
 const backendDomain = import.meta.env.VITE_BACKEND_URL;
 const currentDomain = import.meta.env.VITE_FRONTEND_URL;
 
+console.log(backendDomain, currentDomain);
+
 signupForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const name = document.querySelector("#name").value;
