@@ -3,11 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build --mode production && cp public/signup.html dist/ && cp public/login.html dist/",
-    "preview": "vite preview"
-  },
+"scripts": {
+  "dev": "vite",
+  "build": "vite build --mode production && copy public\\signup.html dist\\ && copy public\\login.html dist\\",
+  "preview": "vite preview"
+},
   "devDependencies": {
     "vite": "^6.0.5"
   },
