@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp public/signup.html dist/ && cp public/login.html dist/",
+    "build": "vite build --mode production && cp public/signup.html dist/ && cp public/login.html dist/",
     "preview": "vite preview"
   },
   "devDependencies": {
