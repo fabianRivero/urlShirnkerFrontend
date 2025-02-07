@@ -2,7 +2,9 @@ import { item } from "./getToken";
 import { tableInfo } from "./tableInfo";
 import { jwtDecode } from 'jwt-decode';
 
-const backendDomain = import.meta.env.VITE_BACKEND_URL;
+// const backendDomain = 'http://localhost:5000';
+
+const backendDomain = 'https://urlshirnkerapi.onrender.com';
 
 document.addEventListener("DOMContentLoaded", () => {
     const shrinkButton = document.querySelector("#shrink-button");

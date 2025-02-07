@@ -1,12 +1,10 @@
 const signupForm = document.querySelector("#form");
 
-console.log(import.meta.env);
+// const backendDomain = 'http://localhost:5000';
+// const currentDomain = 'http://localhost:5173';
 
-const backendDomain = import.meta.env.VITE_BACKEND_URL || "Valor por defecto";
-// const backendDomain = import.meta.env.VITE_BACKEND_URL;
-const currentDomain = import.meta.env.VITE_FRONTEND_URL;
-
-console.log(backendDomain, currentDomain);
+const backendDomain = 'https://urlshirnkerapi.onrender.com';
+const currentDomain = 'https://myurlshrinker.netlify.app/';
 
 signupForm.addEventListener("submit", async (event) => {
   event.preventDefault();

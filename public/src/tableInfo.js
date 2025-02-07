@@ -1,7 +1,9 @@
 import { item } from "./getToken";
 import { jwtDecode } from "jwt-decode";
 
-const backendDomain = import.meta.env.VITE_BACKEND_URL;
+// const backendDomain = 'http://localhost:5000';
+
+const backendDomain = 'https://urlshirnkerapi.onrender.com';
 
 const table = document.querySelector("#table");
 const tbody = document.querySelector("#tbody");

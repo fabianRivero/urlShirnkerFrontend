@@ -2,7 +2,10 @@ import { item } from "./getToken";
 
 const logout = document.querySelector("#logout");
 
-const currentDomain = import.meta.env.VITE_FRONTEND_URL;
+// const currentDomain = 'http://localhost:5173';
+
+const currentDomain = 'https://myurlshrinker.netlify.app/';
+
 
 logout.addEventListener("click", () => {
     if (!item){
