@@ -65,7 +65,7 @@ const shrinkButton = document.querySelector("#shrink-button");
             console.error(error);
         } finally {
             shrinkButton.disabled = false;
-            shrinkButton.textContent = "Sign Up";
+            shrinkButton.textContent = "Shrink";
             shrinkButton.style.backgroundColor = "#4CAF50";
             shrinkButton.style.cursor = "pointer";
           };

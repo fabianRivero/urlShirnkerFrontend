@@ -57,7 +57,7 @@ signupForm.addEventListener("submit", async (event) => {
   } finally {
     signupButton.disabled = false;
     signupButton.textContent = "Sign Up";
-    signupButton.style.backgroundColor = "#4CAF50";
+    signupButton.style.backgroundColor = "#FF9800";
     signupButton.style.cursor = "pointer";
   };
 });

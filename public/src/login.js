@@ -51,7 +51,7 @@ loginForm.addEventListener("submit", async (event) => {
       loadingOverlay.classList.add("hidden");
     } finally {
       loginButton.disabled = false;
-      loginButton.textContent = "Sign Up";
+      loginButton.textContent = "Log In";
       loginButton.style.backgroundColor = "#4CAF50";
       loginButton.style.cursor = "pointer";
     };
