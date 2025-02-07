@@ -31,7 +31,7 @@
     gap: 20px;
   }
   
-  #navbar a, #logout {
+  #navbar a, #logout, #delete-account {
     color: white;
     text-decoration: none;
     padding: 10px 15px;
@@ -39,7 +39,7 @@
     transition: 0.3s;
   }
   
-  #navbar a:hover, #logout:hover {
+  #navbar a:hover, #logout:hover, #delete-account:hover {
     background-color: #367c39;
   }
   
