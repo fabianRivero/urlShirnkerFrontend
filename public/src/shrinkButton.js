@@ -7,7 +7,8 @@ import { jwtDecode } from 'jwt-decode';
 const backendDomain = 'https://urlshirnkerapi.onrender.com';
 
 document.addEventListener("DOMContentLoaded", () => {
-    const shrinkButton = document.querySelector("#shrink-button");
+
+const shrinkButton = document.querySelector("#shrink-button");
 
     if (!shrinkButton) {
         return;
@@ -26,19 +27,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     shrinkButton.addEventListener("click", async (event) => {
         event.preventDefault();
-        loadingOverlay.classList.remove("hidden");
 
         if (!item) {
             alert("You must log in first");
-            loadingOverlay.classList.add("hidden");
             return;
         };
 
         if (!urlValid(url.value)) {
             alert("You must enter a valid URL");
-            loadingOverlay.classList.add("hidden");
             return;
         };
+
+        shrinkButton.disabled = true;
+        shrinkButton.textContent = "Processing...";
+        shrinkButton.style.backgroundColor = "#ccc";
+        shrinkButton.style.cursor = "not-allowed";
 
         const token = item.token;
         const payload = jwtDecode(token);
@@ -58,9 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             tableInfo();
             alert("Link shrink successfully");
-            loadingOverlay.classList.add("hidden");
         } catch (error) {
             console.error(error);
-        }
+        } finally {
+            shrinkButton.disabled = false;
+            shrinkButton.textContent = "Sign Up";
+            shrinkButton.style.backgroundColor = "#4CAF50";
+            shrinkButton.style.cursor = "pointer";
+          };
     });
 });

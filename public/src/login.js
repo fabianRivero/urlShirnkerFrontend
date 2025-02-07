@@ -1,4 +1,5 @@
 const loginForm = document.querySelector("#form");
+const loginButton = document.querySelector("#login-button");
 
 // const backendDomain = 'http://localhost:5000';
 // const currentDomain = 'http://localhost:5173';
@@ -8,11 +9,15 @@ const currentDomain = 'https://myurlshrinker.netlify.app/';
 
 loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    loadingOverlay.classList.remove("hidden");
 
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
   try{ 
+
+    loginButton.disabled = true;
+    loginButton.textContent = "Processing...";
+    loginButton.style.backgroundColor = "#ccc";
+    loginButton.style.cursor = "not-allowed";
     
     const response = await fetch(`${backendDomain}/api/users/login`, {
         method: 'POST',
@@ -23,11 +28,9 @@ loginForm.addEventListener("submit", async (event) => {
     });
     if (response.status === 400) {
         alert('Invalid password o email.');
-        loadingOverlay.classList.add("hidden");
         return;
       } else if (!response.ok) {
         alert('Error: ' + response.status);
-        loadingOverlay.classList.add("hidden");
         return;
       };
 
@@ -41,11 +44,15 @@ loginForm.addEventListener("submit", async (event) => {
             expiry: now.getTime() + ttl,
         };
         alert("logged in successfully");
-        loadingOverlay.classList.add("hidden");
         localStorage.setItem('authToken', JSON.stringify(item));
         window.location.href = `${currentDomain}`;
     }catch{
       alert("Something went wrong.");
       loadingOverlay.classList.add("hidden");
+    } finally {
+      loginButton.disabled = false;
+      loginButton.textContent = "Sign Up";
+      loginButton.style.backgroundColor = "#4CAF50";
+      loginButton.style.cursor = "pointer";
     };
 });

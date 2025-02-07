@@ -1,4 +1,5 @@
 const signupForm = document.querySelector("#form");
+const signupButton = document.querySelector("#signup-button");
 
 // const backendDomain = 'http://localhost:5000';
 // const currentDomain = 'http://localhost:5173';
@@ -8,7 +9,6 @@ const currentDomain = 'https://myurlshrinker.netlify.app/';
 
 signupForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-  loadingOverlay.classList.remove("hidden");
 
   const name = document.querySelector("#name").value;
   const email = document.querySelector("#email").value;
@@ -18,9 +18,13 @@ signupForm.addEventListener("submit", async (event) => {
 
     if (password.length < 8){
             alert("Password must have at least 8 characters");
-            loadingOverlay.classList.add("hidden"); // Oculta el overlay
             return;
     };   
+  
+    signupButton.disabled = true;
+    signupButton.textContent = "Processing...";
+    signupButton.style.backgroundColor = "#ccc";
+    signupButton.style.cursor = "not-allowed";
 
     const usersResponse = await fetch(`${backendDomain}/api/users`);
     const responseInfo = await usersResponse.json();
@@ -29,7 +33,6 @@ signupForm.addEventListener("submit", async (event) => {
         let userExists = responseInfo.some(user => user.email === email);
         if (userExists) {
             alert("This user already exists,");
-            loadingOverlay.classList.add("hidden");
             return;
           };
     };
@@ -52,6 +55,9 @@ signupForm.addEventListener("submit", async (event) => {
   } catch (error) {
     alert("Something went wrong");
   } finally {
-    loadingOverlay.classList.add("hidden"); 
+    signupButton.disabled = false;
+    signupButton.textContent = "Sign Up";
+    signupButton.style.backgroundColor = "#4CAF50";
+    signupButton.style.cursor = "pointer";
   };
 });
