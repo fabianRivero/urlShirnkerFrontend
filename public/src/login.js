@@ -8,6 +8,7 @@ const currentDomain = 'https://myurlshrinker.netlify.app/';
 
 loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    loadingOverlay.classList.remove("hidden");
 
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
@@ -22,9 +23,11 @@ loginForm.addEventListener("submit", async (event) => {
     });
     if (response.status === 400) {
         alert('Invalid password o email.');
+        loadingOverlay.classList.add("hidden");
         return;
       } else if (!response.ok) {
         alert('Error: ' + response.status);
+        loadingOverlay.classList.add("hidden");
         return;
       };
 
@@ -37,10 +40,12 @@ loginForm.addEventListener("submit", async (event) => {
             token: token,
             expiry: now.getTime() + ttl,
         };
-        alert("Successful login");
+        alert("logged in successfully");
+        loadingOverlay.classList.add("hidden");
         localStorage.setItem('authToken', JSON.stringify(item));
         window.location.href = `${currentDomain}`;
     }catch{
       alert("Something went wrong.");
+      loadingOverlay.classList.add("hidden");
     };
 });

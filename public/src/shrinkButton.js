@@ -26,14 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     shrinkButton.addEventListener("click", async (event) => {
         event.preventDefault();
+        loadingOverlay.classList.remove("hidden");
 
         if (!item) {
             alert("You must log in first");
+            loadingOverlay.classList.add("hidden");
             return;
         };
 
         if (!urlValid(url.value)) {
             alert("You must enter a valid URL");
+            loadingOverlay.classList.add("hidden");
             return;
         };
 
@@ -55,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             tableInfo();
             alert("Link shrink successfully");
+            loadingOverlay.classList.add("hidden");
         } catch (error) {
             console.error(error);
         }
