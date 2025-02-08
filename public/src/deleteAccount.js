@@ -2,6 +2,8 @@ import { item } from "./getToken";
 import { backendDomain } from "./urlDomains";
 import { currentDomain } from "./urlDomains";
 
+const del = document.querySelector("#delete-account");
+
 del.addEventListener("click", async () => {
     if (!item){
         window.location.href = `${currentDomain}/`;
