@@ -117,26 +117,6 @@
   .short-url:hover {
     text-decoration: underline;
   }
-  
-  /* 📱 Responsividad */
-  @media (max-width: 600px) {
-    #header {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    #navbar {
-      gap: 10px;
-    }
-  
-    #form {
-      width: 100%;
-    }
-  
-    #table {
-      font-size: 14px;
-    }
-  }
 
 .qr-code {
   display: flex;
@@ -168,9 +148,44 @@
 
 #table {
     flex-direction: column;
-    width: 90%;
+    width: 80%;
     max-width: 800px;
     margin: 20px auto;
     border-collapse: collapse;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 600px) {
+    #header {
+      text-align: center;
+    }
+  
+    #navbar {
+      gap: 8px;
+      font-size: 12px;
+    }
+  
+    #form {
+      width: 100%;
+    }
+  
+    #table {
+      font-size: 10px;
+    }
+
+    .qr-code {
+      width: 100px;
+    }
+    
+    .download-btn, .copy-btn {
+      padding: 3px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 9px;
+      display: flex;
+      justify-self: center;
+    }
   }
