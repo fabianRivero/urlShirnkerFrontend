@@ -6,20 +6,22 @@ import { item } from "./getToken";
 
 const now = new Date();
 
-if(item){
+if(!item){
+    logout.className = "off";
+    login.className = 'on';
+    del.className = 'off';
+} else {
     if (now.getTime() > item.expiry) {
+        console.log(now.getTime(), item.expiry)
+        console.log(now.getTime() - item.expiry)
+        console.log("qwqwqwqw")
         localStorage.removeItem("authToken"); 
         logout.className = "off";
         login.className = 'on';
         del.className = 'off';
+    } else {
+        logout.className = "on";
+        login.className = 'off';
+        del.className = 'on';
     };
-    logout.className = "on";
-    login.className = 'off';
-    del.className = 'on';
-
-} else {
-    logout.className = "off";
-    login.className = 'on';
-    del.className = 'off';
 };
-
