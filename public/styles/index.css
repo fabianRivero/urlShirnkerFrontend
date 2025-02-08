@@ -126,12 +126,10 @@
     }
   
     #navbar {
-      flex-direction: column;
       gap: 10px;
     }
   
     #form {
-      flex-direction: column;
       width: 100%;
     }
   
