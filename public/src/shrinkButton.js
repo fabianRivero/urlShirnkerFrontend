@@ -1,10 +1,7 @@
 import { item } from "./getToken";
 import { tableInfo } from "./tableInfo";
 import { jwtDecode } from 'jwt-decode';
-
-// const backendDomain = 'http://localhost:5000';
-
-const backendDomain = 'https://urlshirnkerapi.onrender.com';
+import { backendDomain } from "./urlDomains";
 
 document.addEventListener("DOMContentLoaded", () => {
 

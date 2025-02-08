@@ -1,11 +1,8 @@
+import { backendDomain } from "./urlDomains";
+import { currentDomain } from "./urlDomains";
+
 const loginForm = document.querySelector("#form");
 const loginButton = document.querySelector("#login-button");
-
-// const backendDomain = 'http://localhost:5000';
-// const currentDomain = 'http://localhost:5173';
-
-const backendDomain = 'https://urlshirnkerapi.onrender.com';
-const currentDomain = 'https://myurlshrinker.netlify.app/';
 
 loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();

@@ -1,11 +1,7 @@
 import { item } from "./getToken";
+import { currentDomain } from "./urlDomains";
 
 const logout = document.querySelector("#logout");
-
-// const currentDomain = 'http://localhost:5173';
-
-const currentDomain = 'https://myurlshrinker.netlify.app/';
-
 
 logout.addEventListener("click", () => {
     if (!item){

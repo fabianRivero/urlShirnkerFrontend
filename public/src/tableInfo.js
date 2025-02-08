@@ -1,9 +1,13 @@
 import { item } from "./getToken";
 import { jwtDecode } from "jwt-decode";
+import { backendDomain } from "./urlDomains";
 
-// const backendDomain = 'http://localhost:5000';
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text)
+        .then(() => alert("¡Enlace copiado!"))
+        .catch(err => console.error("Error al copiar:", err));
+}
 
-const backendDomain = 'https://urlshirnkerapi.onrender.com';
 
 const table = document.querySelector("#table");
 const tbody = document.querySelector("#tbody");
@@ -53,13 +57,28 @@ export const tableInfo = async () => {
                     a.classList.add("long-url");
                     td.appendChild(a);
                 } else if (col === "short_url") {
+                    const div = document.createElement("div");
+                    div.style.display = "flex";
+                    div.style.alignItems = "center";
+                    div.style.gap = "5px";
+                    
                     const a = document.createElement("a");
                     a.href = `${backendDomain}/api/urls/${url}`;
                     a.textContent = url; 
                     a.target = "_blank";
                     a.rel = "noopener noreferrer";
                     a.classList.add("short-url");
-                    td.appendChild(a);
+
+                    const copyBtn = document.createElement("button");
+                    copyBtn.textContent = "📋 Copiar";
+                    copyBtn.classList.add("copy-btn");
+                    copyBtn.addEventListener("click", () => {
+                        copyToClipboard(a.href);
+                    });
+
+                    div.appendChild(a);
+                    div.appendChild(copyBtn);
+                    td.appendChild(div);
                 } else {
                     td.textContent = obj[col];
                     td.classList.add("clicks"); 

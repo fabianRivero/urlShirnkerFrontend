@@ -1,10 +1,6 @@
 import { item } from "./getToken";
-
-// const backendDomain = 'http://localhost:5000';
-// const currentDomain = 'http://localhost:5173';
-
-const backendDomain = 'https://urlshirnkerapi.onrender.com';
-const currentDomain = 'https://myurlshrinker.netlify.app/';
+import { backendDomain } from "./urlDomains";
+import { currentDomain } from "./urlDomains";
 
 del.addEventListener("click", async () => {
     if (!item){
