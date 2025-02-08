@@ -9,14 +9,17 @@ const now = new Date();
 if(item){
     if (now.getTime() > item.expiry) {
         localStorage.removeItem("authToken"); 
+        logout.className = "off";
+        login.className = 'on';
+        del.className = 'off';
     };
     logout.className = "on";
     login.className = 'off';
-    del.className = 'off';
+    del.className = 'on';
 
 } else {
     logout.className = "off";
     login.className = 'on';
-    del.className = 'on';
+    del.className = 'off';
 };
 
