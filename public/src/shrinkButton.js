@@ -1,7 +1,7 @@
 import { item } from "./getToken";
 import { tableInfo } from "./tableInfo";
 import { jwtDecode } from 'jwt-decode';
-import { backendDomain } from "./urlDomains";
+import { backendDomain } from "./urlDomains.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 

@@ -1,5 +1,4 @@
-import { backendDomain } from "./urlDomains";
-import { currentDomain } from "./urlDomains";
+import { backendDomain, currentDomain } from "./urlDomains.js";
 
 console.log(backendDomain)
 console.log(currentDomain)

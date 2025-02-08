@@ -1,6 +1,5 @@
 import { item } from "./getToken";
-import { backendDomain } from "./urlDomains";
-import { currentDomain } from "./urlDomains";
+import { backendDomain, currentDomain } from "./urlDomains.js";
 
 const del = document.querySelector("#delete-account");
 

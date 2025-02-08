@@ -1,5 +1,5 @@
 import { item } from "./getToken";
-import { currentDomain } from "./urlDomains";
+import { currentDomain } from "./urlDomains.js";
 
 const logout = document.querySelector("#logout");
 

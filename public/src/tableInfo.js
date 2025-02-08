@@ -1,6 +1,6 @@
 import { item } from "./getToken";
 import { jwtDecode } from "jwt-decode";
-import { backendDomain } from "./urlDomains";
+import { backendDomain } from "./urlDomains.js";
 
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text)
