@@ -1,6 +1,9 @@
 import { backendDomain } from "./urlDomains";
 import { currentDomain } from "./urlDomains";
 
+console.log(backendDomain)
+console.log(currentDomain)
+
 const loginForm = document.querySelector("#form");
 const loginButton = document.querySelector("#login-button");
 
